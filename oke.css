@@ -1,0 +1,115 @@
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  border: 2px solid #1a3b58;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #004a6e;
+}
+
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1000;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Tambahkan margin bawah pada header */
+.header {
+  margin-bottom: 10px;
+}
+
+/* Price List */
+.price-list {
+  flex-grow: 1;
+  overflow-y: auto; /* Tambahkan scroll hanya jika konten terlalu panjang */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Price Card */
+.price-card {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px; /* Beri ruang antar kartu */
+}
+
+/* Jarak antar elemen dan responsif */
+.price-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #1a3b58;
+  margin-bottom: 10px;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Scrollbar Styling */
+.price-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.price-list::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.price-list::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}

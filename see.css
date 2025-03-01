@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(255, 211, 249);
+    padding: 10px;
+}
+
+/* Links */
+.col-12 a {
+    background-color: #edbee1;
+    color: white;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.col-12 a:hover {
+    color: #f8c2fd;
+}
+
+/* Categories */
+.category {
+    border: 0;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 10px;
+    color: rgb(255, 211, 249);
+}
+
+/* Cart Bubble */
+.cart-bubble {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #fde0e0;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 9999; /* Ensure this is higher than other elements */
+}
+
+.cart-bubble:hover {
+    background-color: #f1d9ee;
+}
+
+/* Scroll to Top Arrow */
+.arrow-up {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: #2b2b2b;
+    color: white;
+    padding: 12px 12px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    z-index: 9999;
+}
+
+/* Product List */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.product-list .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product-list .row .col-2 {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.product-list .row .col-2 .btn {
+    background-color: #f5cdef;
+    border: 0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.product-list .row .col-2 .btn:hover {
+    background-color: #fbe5e5;
+}
+
+/* Headings */
+h2 {
+    display: none; /* Hide h2 if not needed */
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Filters */
+.filters {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.filters li {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.filters .category {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background: none;
+    border: none;
+    color: rgb(195, 195, 195);
+    background-color: #7f7f7f;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.filters .category::after {
+    background-color: #fceaea;
+}
+
+.filters .category span {
+    display: flex;
+    align-items: center;
+}
+
+.filters .category span::before {
+    margin-right: 10px;
+}
+
+/* Tags */
+.tags {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+.tag {
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* Categories Wrapper */
+.categories-wrapper {
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+/* Button Pill */
+.btn-pill {
+    padding: 10px 20px;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 25px;
+}
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    object-fit: cover; /* Prevent image distortion */
+    border-radius: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 576px) {
+    .product-list {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: center; /* Center items */
+    }
+
+    .product-list .row .col-2 {
+        max-width: 90%; /* Allow more width on mobile */
+    }
+
+    h3 {
+        font-size: 1.2rem; /* Smaller heading on mobile */
+    }
+
+    p {
+        font-size: 1rem; /* Smaller paragraph on mobile */
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+        gap: 15px;
+    }
+
+    .product-list .row .col-2 {
+        width: 100%; /* Full width on medium screens */
+        max-width: none;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .filters {
+        text-align: center;
+    }
+
+    .tags {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 993px) {
+    .product-list {
+        display: flex; /* Flex layout for larger screens */
+    }
+
+    .product-list .row .col-2 {
+        width: 25%; /* Four items per row on large screens */
+    }
+}
